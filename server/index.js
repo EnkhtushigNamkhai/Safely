@@ -36,22 +36,18 @@ app.post('/saveNumber', function(req, res) {
 
 app.get('/getSaved', function(req, res) {
 	//return all the saved numbers associated with UID
-	// console.log(req.query.uid);
-
 	db.getAll(req.query.uid, function(err, result) {
 		if (err) {
 			console.log('error in getting saved data');
 		} else {
-			// console.log('found this: ', result);
 			res.send(result);
 		}
 	});
 });
 
 app.post('/sendMessage', function(req, res) {
-	console.log('sent message: ',
-	 req.body.message, req.body.numbers, req.body.email);
-
+	// console.log('sent message: ',
+	//  req.body.message, req.body.numbers, req.body.email);
 	for (var i = 0; i < req.body.numbers.length; i++) {
 		client.messages.create(
 		  {
@@ -66,9 +62,12 @@ app.post('/sendMessage', function(req, res) {
 	}
 	res.send();
 	
-	// { message: 'hi',
- //  numbers: [ '9167000049', '34567890' ],
- //  email: 'testing5@gmail.com' }
+/*
+Format of req 
+	{ message: 'hi',
+ 	  numbers: [ '9167000049', '34567890' ],
+  	email: 'testing5@gmail.com' 
+  } 
+ */
+
 });
-
-

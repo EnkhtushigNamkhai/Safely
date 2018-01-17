@@ -2,13 +2,8 @@
 	margin: 1px;
 }
 
-/*div {
-	margin-top: 10px;
-	margin-bottom: 30px;
-}*/
 .wrapper {
-/*	background-color: #000000;
-*/	border-radius: 20px;
+  border-radius: 20px;
 	padding: 20px;
 	opacity: 50;
 }
@@ -59,7 +54,3 @@ i.icon {
 	width: 50%;
 	left: 25%;
 }
-
-}
-
-

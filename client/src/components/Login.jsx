@@ -17,9 +17,7 @@ class Login extends React.Component {
 		}
 	}
 
-
 	updatedUser(e) {
-		// console.log(e.target.value);
 		this.setState({username: e.target.value});
 	}
 
@@ -29,29 +27,19 @@ class Login extends React.Component {
 	}
 
 	logInClicked() {
-
-		//check if successful log in, if it is calls parent function
-		//if not alert.
-		//this.props.loggedIn(this.state.username, this.state.password);
-
-		//sign up a user here
-
-		//make sure there is no user name with the same..
-		// this.props.signedUp(true);
 		const auth = firebase.auth();
 		auth.signInWithEmailAndPassword(this.state.username, this.state.password)
 		.then((user)=>{
 			this.props.loggedIn(user.uid, user.email);
 		})
 		.catch((err)=> {
-			console.log('error logging in!', err);
+			alert("Please try again!");
 		})
 		
 	}
 
 	render() {
 		return (
-
 			<div className="ui form" method="post" action="/">
 				<h1 style ={{color: 'white'}}>LOG IN</h1>
 			  <div className="field">

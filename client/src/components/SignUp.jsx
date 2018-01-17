@@ -18,7 +18,6 @@ class SignUp extends React.Component {
 	}
 
 	updatedUser(e) {
-		// console.log(e.target.value);
 		this.setState({username: e.target.value});
 	}
 
@@ -29,25 +28,8 @@ class SignUp extends React.Component {
 
 	signUpClicked() {
 		// TODO: make sure that the inputs are escaped
-		
-		//sign up a user here
-		console.log('signup clicked', this.state.username, this.state.password);
 		//create a firebase user
-		//make sure there is no user name with the same..
-		// this.props.signedUp(true);
-		// const auth = firebase.auth();
-		// auth.createUserWithEmailAndPassword(this.state.username, this.state.password);
-		
-		// firebase.auth().onAuthStateChanged(function(user) {
-		//   if (user) {
-		//     //store user to database with uid, and no saved contacts
-		//     this.props.signedUp(user.uid, user.email);
-		//   } else {
-		//     // No user is signed in.
-		//   }
-		// }.bind(this));
-
-
+		//make sure there is no user name with the same username that is signing up
 		const auth = firebase.auth();
 		auth.createUserWithEmailAndPassword(this.state.username, this.state.password)
 		.then((user)=>{
@@ -58,11 +40,8 @@ class SignUp extends React.Component {
 		})
 	}
 
-
-
 	render() {
 		return (
-
 			<div className="ui form" method="post" action="/">
 				<h1 style ={{color: 'white'}}>SIGN UP</h1>
 			  <div className="field">
@@ -74,13 +53,9 @@ class SignUp extends React.Component {
 			    <input type="password" name="pass" placeholder="enter password" onChange={this.updatedPass.bind(this)}></input>
 			  </div>
 			 	<p><Link to="/login">Log In?</Link></p>
-
 			  <button className="ui olive button" onClick={this.signUpClicked.bind(this)}>Sign Up</button>
 			</div>
-			)	
-
-
-		
+		)			
 	}
 }
 
