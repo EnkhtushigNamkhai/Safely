@@ -1,0 +1,65 @@
+.row {
+	margin: 1px;
+}
+
+/*div {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}*/
+.wrapper {
+/*	background-color: #000000;
+*/	border-radius: 20px;
+	padding: 20px;
+	opacity: 50;
+}
+
+body {
+	background-color: #2A2A2A;
+	padding: 100px;
+	text-align: center;
+	height: 100%;
+	font-family: 'Abel', sans-serif;
+	font-size: 15px;
+}
+
+.saved {
+	height: 200px;
+	overflow-y: scroll;
+}
+
+.checkbox {
+	background-color: black;
+}
+
+.wrapper {
+	height: 100%;	
+}
+
+#app {
+	height: 100%;
+}
+
+#app .saved{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+i.icon {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.ui.button {
+	margin: 20px;
+}
+
+.ui.form {
+	margin: 20px;
+	width: 50%;
+	left: 25%;
+}
+
+}
+
+
